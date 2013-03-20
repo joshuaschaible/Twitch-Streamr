@@ -1,20 +1,23 @@
+// Title: Twitch Stream List
+// Version: 1.2.2
+// Author: Noah Shrader
+// Website: http://www.noahshrader.com
+
 $(document).ready(function() {
   
-	// <object type="application/x-shockwave-flash" height="378" width="620" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=supermcgamer" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" /><param name="flashvars" value="hostname=www.twitch.tv&channel=supermcgamer&auto_play=true&start_volume=25" /></object>
+	// <object type="application/x-shockwave-flash" height="378" width="620" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=supermcgamer" bgcolor="#181818"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" /><param name="flashvars" value="hostname=www.twitch.tv&channel=supermcgamer&auto_play=true&start_volume=25" /></object>
 	// <iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=supermcgamer&amp;popout_chat=true" height="400" width="300"></iframe>
 	
 	// Variables
-	var members = ['FunForFreedom', 'SuperMCGamer', 'Miketheguyinthehat', 'ChocoPoptartftw', 'Koopatroopa1', 'Jim3798',
-	'Lucarimew', 'Purple_link432', 'TeddyMoose', 'LetsNarvik', 'Wilicolo', 'Lizerdoo', 'SilverDSlite',
-	'Zelda_queen', 'IceKrabby', 'Animejessica', 'Charissachu', 'MutatedPuppet', 'MLGCOD', '123412341234123412341234123'];
-	var social = '{"MLGCOD": "a@a.com;2@2.com"}';
+	var members = ['FunForFreedom', 'SuperMCGamer', 'Miketheguyinthehat', 'ChocoPoptartftw', 'Koopatroopa1', 'Jim3798', 'Lucarimew', 'Purple_link432', 'TeddyMoose', 'LetsNarvik', 'Wilicolo', 'Lizerdoo', 'SilverDSlite', 'Zelda_queen', 'IceKrabby', 'Animejessica', 'Charissachu', 'MutatedPuppet'];
+	var social = '{"SuperMCGamer": "a@a.com;2@2.com"}';
 	social = JSON.parse(social);
 	var memberData = [];
 	
 	$.each(members, function(index, member) {
 		$.getJSON('https://api.twitch.tv/kraken/users/' + member + '?callback=?', function(d) {
 			if(d.status == 404) {
-				// Member dose not exist
+				// Member does not exist
 			} else {
 				var data = [];
 				data[0] = member;
@@ -63,7 +66,7 @@ $(document).ready(function() {
 				if($('#player').html() == '') {
 					$('#player').empty();
 					$('#chat').empty();
-					$('#player').append('<object type="application/x-shockwave-flash" height="378" width="620" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=' + data[0] + '" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" /><param name="flashvars" value="hostname=www.twitch.tv&channel=' + data[0] + '&auto_play=true&start_volume=25" /></object>');
+					$('#player').append('<object type="application/x-shockwave-flash" height="402" width="620" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=' + data[0] + '" bgcolor="#181818"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" /><param name="flashvars" value="hostname=www.twitch.tv&channel=' + data[0] + '&auto_play=true&start_volume=25" /></object>');
 					$('#player').append('<iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=' + data[0] + '&amp;popout_chat=true" height="400" width="300"></iframe>');
 				}
 				$('#members').append('<a class="member ' + data[6] + '" id="' + data[0] + '">');
@@ -72,12 +75,12 @@ $(document).ready(function() {
 				} else {
 					$('#' + data[0]).append('<img src="http://open.spotify.com/static/images/user.png" alt="' + data[1] + '"></a>');
 				}
-				$('#' + data[0]).append('<p>' + data[1] + '</p>');
-				$('#' + data[0]).append('<p>' + data[3] + '</p>');
-				$('#' + data[0]).append('<p>' + data[4] + ' viewers</p>');
+				$('#' + data[0]).append('<p class="member-name">' + data[1] + '</p>');
+				$('#' + data[0]).append('<p class="game">' + data[3] + '</p>');
+				$('#' + data[0]).append('<p class="viewers">' + data[4] + ' viewers</p>');
 				if(social[data[0]]) {
 					$.each(social[data[0]].split(';'), function(index, item) {
-						$('#' + data[0]).append('<a href="' + item + '">' + item + '</a>');
+						$('#' + data[0]).append('<a class="social" href="' + item + '">' + item + '</a>');
 					});
 				}
 			}
@@ -90,12 +93,12 @@ $(document).ready(function() {
 				} else {
 					$('#' + data[0]).append('<img src="http://open.spotify.com/static/images/user.png" alt="' + data[1] + '"></a>');
 				}
-				$('#' + data[0]).append('<p>' + data[1] + '</p>');
-				$('#' + data[0]).append('<p>' + data[3] + '</p>');
-				$('#' + data[0]).append('<p>' + data[4] + ' viewers</p>');
+				$('#' + data[0]).append('<p class="member-name">' + data[1] + '</p>');
+				$('#' + data[0]).append('<p class="game">' + data[3] + '</p>');
+				$('#' + data[0]).append('<p class="viewers">' + data[4] + ' viewers</p>');
 				if(social[data[0]]) {
 					$.each(social[data[0]].split(';'), function(index, item) {
-						$('#' + data[0]).append('<a href="' + item + '">' + item + '</a>');
+						$('#' + data[0]).append('<a class="social" href="' + item + '">' + item + '</a>');
 					});
 				}
 			}
@@ -113,18 +116,20 @@ $(document).ready(function() {
 		$('#members > a').unbind('click').click(function() {
 			$('#player').empty();
 			$('#chat').empty();
-			$('#player').append('<object type="application/x-shockwave-flash" height="378" width="620" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=' + $(this).attr('id') + '" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" /><param name="flashvars" value="hostname=www.twitch.tv&channel=' + $(this).attr('id') + '&auto_play=true&start_volume=25" /></object>');
+			$('#player').append('<object type="application/x-shockwave-flash" height="402" width="620" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=' + $(this).attr('id') + '" bgcolor="#181818"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" /><param name="flashvars" value="hostname=www.twitch.tv&channel=' + $(this).attr('id') + '&auto_play=true&start_volume=25" /></object>');
 			$('#player').append('<iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=' + $(this).attr('id') + '&amp;popout_chat=true" height="400" width="300"></iframe>');
+			$('body').append('<p class="game">' + data[3] + '</p>');
 		});
 	}
 	
 	// Game loop
-	var time = jQuery.now() + 5000;
+	var time = jQuery.now() + 10000;
 	window.setInterval(function() {
 		if(jQuery.now() > time) {
 			update();
-			time = jQuery.now() + 5000;
+			time = jQuery.now() + 10000;
 		}
 		code();
 	}, 0);
+
 });
