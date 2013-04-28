@@ -1,0 +1,195 @@
+/*
+Plugin: Twitch Stream List
+Version: 1.5
+Author: Noah Shrader
+Website: http://www.noahshrader.com
+*/
+
+
+/* ------------------------------- */
+/* ---------- [ Reset ] ---------- */
+/* ------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	font-family: 'Roboto',Helvetica,sans-serif;
+	line-height: 1;
+	background: #2C2C2C url(../images/pattern.png);
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+	cursor: pointer;
+	text-decoration: none;
+}
+.clear {
+	clear: both;
+}
+
+/* ------------------------------ */
+/* ---------- [ Main ] ---------- */
+/* ------------------------------ */
+
+#header {
+	height: 100px;
+	width: 920px;
+	padding: 40px 0;
+	margin: 0 auto;
+	background: url(../images/twitch-logo.png) no-repeat center center;
+}
+#top {
+	width: 970px;
+	margin: 0 auto;
+}
+#player {
+	width: 920px;
+	height: 400px;
+	padding: 20px;
+	border: solid 4px #555;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	box-shadow: 0 0 30px rgba(0,0,0,.8);
+	-moz-box-shadow: 0 0 30px rgba(0,0,0,.8);
+	-webkit-box-shadow: 0 0 30px rgba(0,0,0,.8);
+	background: #181818;
+}
+#chat_embed {
+	float: right;
+	height: 400px;
+	width: 300px;
+}
+#members {
+	width: 920px;
+	padding: 40px 20px;
+	margin: 0 auto;
+}
+a.member {
+	position: relative;
+	float: left;
+	display: inline-block;
+	overflow: hidden;
+	width: 268px;
+	height: 100px;
+	padding: 10px;
+	margin: 6px;
+	border:solid 2px #FFF;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	box-shadow: 0 0 6px rgba(0,0,0,.8);
+	-moz-box-shadow: 0 0 6px rgba(0,0,0,.8);
+	-webkit-box-shadow: 0 0 6px rgba(0,0,0,.8);
+	background-color: #fbfafc;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(251, 250, 252)), to(rgb(217, 216, 218)));
+	background-image: -webkit-linear-gradient(top, rgb(251, 250, 252), rgb(217, 216, 218));
+	background-image: -moz-linear-gradient(top, rgb(251, 250, 252), rgb(217, 216, 218));
+	background-image: -o-linear-gradient(top, rgb(251, 250, 252), rgb(217, 216, 218));
+	background-image: -ms-linear-gradient(top, rgb(251, 250, 252), rgb(217, 216, 218));
+	background-image: linear-gradient(top, rgb(251, 250, 252), rgb(217, 216, 218));
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#fbfafc', EndColorStr='#d9d8da');
+	}
+a.member:hover {
+	background-color: #f7f6f8;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(247, 246, 248)), to(rgb(237, 236, 238)));
+	background-image: -webkit-linear-gradient(top, rgb(247, 246, 248), rgb(237, 236, 238));
+	background-image: -moz-linear-gradient(top, rgb(247, 246, 248), rgb(237, 236, 238));
+	background-image: -o-linear-gradient(top, rgb(247, 246, 248), rgb(237, 236, 238));
+	background-image: -ms-linear-gradient(top, rgb(247, 246, 248), rgb(237, 236, 238));
+	background-image: linear-gradient(top, rgb(247, 246, 248), rgb(237, 236, 238));
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f7f6f8', EndColorStr='#edecee');
+}
+a.member img {
+	float: left;
+	display: inline;
+	width: 70px;
+	height: 70px;
+	margin-right: 14px;
+	border: solid 1px #FFF;
+}
+a.member p.member-name {
+	font-size: 14px;
+	margin-bottom: 8px;
+	text-shadow: 0 1px #FFF;
+}
+a.member p.game {
+	color: #777;
+	font-size: 16px;
+	text-shadow: 0 1px #FFF;
+}
+a.member p.viewers {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #999;
+	font-size: 10px;
+	line-height: 10px;
+	text-transform: uppercase;
+	text-indent: 10px;
+	width: 100%;
+	padding: 6px 0;
+	background-color: #FFF;
+	background-repeat: no-repeat;
+	background-position: 97% 50%;
+}
+a.member.online p.viewers {
+	background-image: url(../images/online.png);
+}
+a.member.offline p.viewers {
+	background-image: url(../images/offline.png);
+}
+.social { display: none; }
+
+/* -------------------------------- */
+/* ---------- [ Footer ] ---------- */
+/* -------------------------------- */
+
+#footer {
+	clear: both;
+	text-align: center;
+	width: 100%;
+	padding: 60px 0;
+}
+#footer p {
+	color: #AAA;
+	font-size: 12px;
+	text-shadow: 0 -2px #181818;
+}
+#footer a {
+	color: #FFF;
+}
