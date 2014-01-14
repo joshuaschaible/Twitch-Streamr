@@ -60,7 +60,8 @@ header.mainHeader {
   overflow: hidden;
   height: 214px
   width: 100%;
-  background: #764a88;
+  background: #764a88 url(../images/headerback.jpg) no-repeat center center;
+  background-size: cover !important;
 }
   header.mainHeader img {
     display: block;
