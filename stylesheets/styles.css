@@ -4,7 +4,15 @@ Plugin Website: noahshrader.github.io/Twitch-Streamr
 Author: Noah Shrader
 Author Website: noahshrader.com
 */
-
+*,
+*:after,
+*:before {
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  -webkit-font-smoothing:antialiased;
+  font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -54,13 +62,22 @@ table {
 -- TYPOGRAPHY
 \* -------------------------------------------------------------------- */
 h1, h2, h3, h4, h5 {
+  color: #444;
   margin-bottom: .8em;
+}
+h2 {
+  font-size: 1.8em;
+  font-weight: 600;
 }
 h3 {
   font-size: 1.4em;
 }
 h4 {
   font-size: 1.2em;
+}
+p {
+  color: #777;
+  margin-bottom: 1.4em;
 }
 
 /* -------------------------------------------------------------------- *\
@@ -72,8 +89,8 @@ header.mainHeader {
   position: relative;
   overflow: hidden;
   text-align: center;
-  padding: 3em 0;
-  height: 214px
+  padding: 4em 5%;
+  height: 440px;
   width: 100%;
   background: #764a88 url(../images/headerback.jpg) no-repeat center center;
   background-size: cover !important;
@@ -82,7 +99,7 @@ header.mainHeader {
     display: block;
     margin: 0 auto;
     width: 90%;
-    max-width: 240px;
+    max-width: 280px;
   }
   header.mainHeader h4 {
     color: #FFF;
@@ -95,10 +112,10 @@ header.mainHeader {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 70px;
+  padding: 2.6em 5%;
   background: #FFF;
   width: 100%;
-  background: #EEE;
+  background: rgba(68,40,79,.4);
 }
 
 /* -------------------------------------------------------------------- *\
@@ -107,7 +124,7 @@ header.mainHeader {
 
 .container {
   width: 90%;
-  max-width: 1140px;
-  padding: 2em 0;
+  max-width: 840px;
+  padding: 4em 0;
   margin: 0 auto;
 }
