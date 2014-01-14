@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
+  background: #F4F4F4;
 }
 ol, ul {
   list-style: none;
@@ -52,8 +53,11 @@ table {
 -- HEADER
 \* -------------------------------------------------------------------- */
 
+/* Main Header */
 header.mainHeader {
   padding: 2em 0;
+  overflow: hidden;
+  height: 214px
   width: 100%;
   background: #764a88;
 }
@@ -63,3 +67,10 @@ header.mainHeader {
     width: 90%;
     max-width: 240px;
   }
+
+/* Secondary Header */
+.secHeader {
+  height: 70px;
+  background: #FFF;
+  width: 100%;
+}
