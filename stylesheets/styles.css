@@ -32,6 +32,7 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1;
   background: #F4F4F4;
+  height: 3000px;
 }
 ol, ul {
   list-style: none;
@@ -73,4 +74,16 @@ header.mainHeader {
   height: 70px;
   background: #FFF;
   width: 100%;
+  border-bottom: solid 1px #E4E4E4;
+}
+
+/* -------------------------------------------------------------------- *\
+-- CONTENT
+\* -------------------------------------------------------------------- */
+
+.container {
+  width: 90%;
+  max-width: 1140px;
+  padding: 2em 0;
+  margin: 0 auto;
 }
