@@ -47,3 +47,10 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+
+header.mainHeader {
+  height: 120px;
+  width: 100%;
+  background: #764a88;
+}
