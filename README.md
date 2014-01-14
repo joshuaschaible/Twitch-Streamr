@@ -1,9 +1,4 @@
-TWITCH STREAM FEEDER
-====================
-
-Author: Noah Shrader
-Website: webdesignermemphis.com
-Description: Grabs users from Twitch and plays their live stream (like speedrunslive.com)
+Twitch Streamr
 
 
 How It Works
