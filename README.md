@@ -1,13 +1,11 @@
-Twitch Streamr
-==================
+##Twitch Streamr
 
 A complete revamp of this script will be available in the next two weeks, which includes updates to both the manual and automatic scripts. Some new features have been added, as well as given a completely new design.
 
 A new Wordpress plugin is on the way and will be available Spring 2014.
 
 
-Changelog
-==================
+###Changelog
 
 v1.5
 - Automatic team pulls
