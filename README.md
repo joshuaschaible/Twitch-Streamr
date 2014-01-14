@@ -1,4 +1,4 @@
-##Twitch Streamr
+#Twitch Streamr
 
 A complete revamp of this script will be available in the next two weeks, which includes updates to both the manual and automatic scripts. Some new features have been added, as well as given a completely new design.
 
