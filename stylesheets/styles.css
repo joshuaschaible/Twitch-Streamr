@@ -41,7 +41,6 @@ body {
   font-family: 'proxima-nova', Helvetica, sans-serif;
   font-size: 100%;
   line-height: 1;
-  height: 3000px;
 }
 ol, ul {
   list-style: none;
@@ -103,7 +102,7 @@ a.btn {
   font-size: 1em;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 1.4em 1.2em;
+  padding: 1.2em;
   min-width: 200px;
   border-radius: 3px;
   -moz-border-radius: 3px;
@@ -122,7 +121,7 @@ header.mainHeader {
   position: relative;
   overflow: hidden;
   text-align: center;
-  padding: 5em 5% 10em;
+  padding: 5em 5% 9.5em;
   width: 100%;
   background: #6c4d97;
   background-size: cover !important;
@@ -146,7 +145,7 @@ header.mainHeader {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 1.6em 5%;
+  padding: 1.2em 5%;
   background: #FFF;
   width: 100%;
   background: rgba(82,57,116,.6);
@@ -174,3 +173,11 @@ header.mainHeader {
   section.content {
     padding: 1.2em 0;
   }
+
+/* -------------------------------------------------------------------- *\
+-- DEMO/STREAMS SECTION
+\* -------------------------------------------------------------------- */
+
+#streams {
+  height: 900px;
+}

@@ -26,8 +26,9 @@
       <a class="btn" href="/">Demo</a>
     </div>
   </header>
-
   <!-- Demo -->
+  <div id="streams">
+  </div>
   <!-- Content -->
   <div class="container">
     <section class="content">
@@ -46,6 +47,13 @@
       <p>Twitch Streamr is licensed under <a href="https://github.com/ascott1/bigSlide.js/blob/master/LICENSE-MIT" target="_blank">The MIT License (MIT)</a></p>
     </section>
   </div>
+  <script>
+  jQuery(document).ready(function() {
+    jQuery(".seemore").click(function(){
+        jQuery(".panel").slideToggle("fast");
+    });
+  });
+  </script>
   <script src="javascripts/scale.fix.js"></script>
      <ul>
       <li><a href="https://github.com/noahshrader/Twitch-Streamr/zipball/master">Download <strong>ZIP File</strong></a></li>
