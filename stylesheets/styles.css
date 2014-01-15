@@ -38,7 +38,7 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 body {
-  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-family: 'proxima-nova', Helvetica, sans-serif;
   font-size: 100%;
   line-height: 1;
   height: 3000px;
@@ -65,7 +65,7 @@ table {
 }
 
 /* -------------------------------------------------------------------- *\
--- TYPOGRAPHY
+-- TYPOGRAPHY / BUTTONS
 \* -------------------------------------------------------------------- */
 h1, h2, h3, h4, h5 {
   color: #444;
@@ -89,6 +89,29 @@ p {
   line-height: 1.6em;
   margin-bottom: 1.4em;
 }
+a {
+  color: #6c4d97;
+  text-decoration: none;
+  transition: linear .1s;
+  -moz-transition: linear .1s;
+  -webkit-transition: linear .1s;
+}
+a.btn {
+  position: relative;
+  display: inline-block;
+  color: #FFF;
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1.4em 1.2em;
+  min-width: 200px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  background: #6c4d97;
+}
+  a.btn:hover {
+    background: #7956a9;
+  }
 
 /* -------------------------------------------------------------------- *\
 -- HEADER
@@ -99,7 +122,7 @@ header.mainHeader {
   position: relative;
   overflow: hidden;
   text-align: center;
-  padding: 6em 5% 8em;
+  padding: 5em 5% 10em;
   width: 100%;
   background: #6c4d97;
   background-size: cover !important;
@@ -123,11 +146,20 @@ header.mainHeader {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 2.6em 5%;
+  padding: 1.6em 5%;
   background: #FFF;
   width: 100%;
-  background: rgba(82,57,116,.5);
+  background: rgba(82,57,116,.6);
 }
+  span.version {
+    display: inline-block;
+    color: #6c4d97;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    background: #FFF;
+  }
 
 /* -------------------------------------------------------------------- *\
 -- CONTENT
@@ -140,5 +172,5 @@ header.mainHeader {
   margin: 0 auto;
 }
   section.content {
-    padding: 1.4em 0;
+    padding: 1.2em 0;
   }
