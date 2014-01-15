@@ -124,7 +124,7 @@ header.mainHeader {
   text-align: center;
   padding: 5em 5% 9.5em;
   width: 100%;
-  background: #6c4d97;
+  background: #6c4d97 url(../images/headerback.jpg) no-repeat center center;
   background-size: cover !important;
 }
   header.mainHeader img.logo {
