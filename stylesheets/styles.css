@@ -38,7 +38,7 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 body {
-  font-family: 'proxima-nova', Helvetica, sans-serif;
+  font-family: 'Open Sans', Helvetica, sans-serif;
   font-size: 100%;
   line-height: 1;
 }
@@ -67,7 +67,7 @@ table {
 -- TYPOGRAPHY / BUTTONS
 \* -------------------------------------------------------------------- */
 h1, h2, h3, h4, h5 {
-  color: #444;
+  color: #333;
   margin-bottom: 1em;
 }
 h2 {
@@ -179,5 +179,7 @@ header.mainHeader {
 \* -------------------------------------------------------------------- */
 
 #streams {
+  display: none;
   height: 900px;
+  background: #333;
 }
