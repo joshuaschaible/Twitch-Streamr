@@ -124,8 +124,7 @@ header.mainHeader {
   text-align: center;
   padding: 5em 5% 9.5em;
   width: 100%;
-  background: #6c4d97 url(../images/headerback.jpg) no-repeat center center;
-  background-size: cover !important;
+  background: #6c4d97;
 }
   header.mainHeader img.logo {
     display: block;
@@ -167,12 +166,11 @@ header.mainHeader {
 }
   span.version {
     display: inline-block;
-    color: #6c4d97;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    -moz-border-radius: 50%;
-    background: #FFF;
+    color: #FFF;
+    padding: .8em 1.6em;
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    background: rgba(82,57,116,.6);
   }
 
 @-webkit-keyframes fadeInDown {
