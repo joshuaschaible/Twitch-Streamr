@@ -133,7 +133,7 @@ header.mainHeader {
     display: block;
     margin: 0 auto;
     width: 90%;
-    max-width: 280px;
+    max-width: 260px;
     -webkit-animation-name: fadeInDown;
     -moz-animation-name: fadeInDown;
     -o-animation-name: fadeInDown;
@@ -150,9 +150,9 @@ header.mainHeader {
     animation-duration:2s;
   }
   header.mainHeader h4 {
-    color: #d3c8e0;
+    color: #FFF;
     font-weight: 600;
-    margin: 0 auto;
+    margin: .8em auto 1.8em;
     width: 90%;
     max-width: 260px;
   }
@@ -175,16 +175,14 @@ header.mainHeader {
   span.version {
     display: inline-block;
     color: #7F5FAA;
-    font-size: 2em;
+    font-size: .9em;
     font-weight: 700;
     text-align: center;
     text-transform: uppercase;
-    line-height: 60px;
     margin: .4em 0 .9em;
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    -moz-border-radius: 50%;
+    padding: .9em 1.4em;
+    border-radius: 30px;
+    -moz-border-radius: 30px;
     background: rgba(82,57,116,.6);
   }
 
