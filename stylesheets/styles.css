@@ -123,7 +123,7 @@ header.mainHeader {
   position: fixed;
   overflow: hidden;
   text-align: center;
-  padding: 10em 4%;
+  padding: 10em 3em;
   height: 100%;
   width: 440px;
   background: #6c4d97;
