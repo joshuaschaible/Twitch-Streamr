@@ -119,11 +119,13 @@ a.btn {
 
 /* Main Header */
 header.mainHeader {
-  position: relative;
+  position: fixed;
   overflow: hidden;
   text-align: center;
   padding: 4.8em 5% 10em;
-  width: 100%;
+  height: 100%;
+  width: 35%;
+  min-width: 440px;
   background: #6c4d97;
 }
   header.mainHeader img.logo {
@@ -227,9 +229,10 @@ header.mainHeader {
 \* -------------------------------------------------------------------- */
 
 .container {
-  width: 90%;
-  max-width: 740px;
-  padding: 4em 0;
+  position: absolute;
+  right: 0;
+  width: 65%;
+  padding: 4.8em;
   margin: 0 auto;
 }
   section {
