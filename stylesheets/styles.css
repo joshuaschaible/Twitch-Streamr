@@ -74,7 +74,7 @@ h1, h2, h3, h4, h5 {
   margin-bottom: 1em;
 }
 h2 {
-  font-size: 1.4em;
+  font-size: 1.6em;
   font-weight: 400;
 }
 h3 {
@@ -125,9 +125,9 @@ header.mainHeader {
   text-align: center;
   padding: 10em 4%;
   height: 100%;
-  width: 30%;
-  min-width: 440px;
+  width: 440px;
   background: #6c4d97;
+  z-index: 1000;
 }
   header.mainHeader img.logo {
     display: block;
@@ -239,7 +239,7 @@ header.mainHeader {
 .container {
   position: absolute;
   right: 0;
-  width: 70%;
+  left: 440px;
   padding: 5em;
   margin: 0 auto;
 }
